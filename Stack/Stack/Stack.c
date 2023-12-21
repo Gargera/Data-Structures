@@ -12,8 +12,9 @@ void print_stack(struct node** head)
         while(HEAD != NULL)
         {
             printf("%d ", HEAD -> val);
-            free(HEAD);
+            struct node* free_ad = HEAD;
             HEAD = HEAD -> next;
+            free(free_ad);
         }
         *head = NULL;
     }
